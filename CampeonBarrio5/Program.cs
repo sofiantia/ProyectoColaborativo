@@ -12,7 +12,7 @@ namespace CampeonBarrio5
         {
             Console.WriteLine("*** Campeón del Barrio *** \n\n");
 
-            Console.WriteLine("Ayuda no he terminado lo de 3D");
+            Console.WriteLine("Amigue solo queda una esperanza");
             Console.WriteLine("Qué feo caso");
             Console.WriteLine("Hola, arreglamos el código");
 
