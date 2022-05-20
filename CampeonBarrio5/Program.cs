@@ -12,8 +12,6 @@ namespace CampeonBarrio5
         {
             Console.WriteLine("*** Campeón del Barrio *** \n\n");
 
-
-
             Console.WriteLine("Me quiero morir");
             Console.WriteLine("Qué feo caso");
             Console.WriteLine("Hola, arreglamos el código");
