@@ -80,11 +80,11 @@ namespace CampeonBarrio5
             IdentificaCampeon(losJugadores);
         }
 
-        /// <summary>
+         /// <summary>
         /// Identifica quien es el campeón entre los jugadores a partir del criterio definido
         /// </summary>
         /// <param name="losJugadores">Arreglo de los jugadores</param>
-        static void IdentificaCampeon(Jugador[] arregloJugadores)
+        public static Jugador[] IdentificaCampeon(Jugador[] arregloJugadores)
         {
             //Arbitrariamente seleccionamos el campeón como el primer jugador del arreglo
             Jugador jugadorCampeon = arregloJugadores[0];
@@ -99,22 +99,61 @@ namespace CampeonBarrio5
             //Contamos cuantos jugadores tienen ese mejor puntaje
             int cantidadCampeones = 0;
 
-            foreach (Jugador unJugador in arregloJugadores)
+            for (int i1 = 0; i1 < arregloJugadores.Length; i1++)
+            {
+                Jugador unJugador = arregloJugadores[i1];
                 if (unJugador.Promedio == jugadorCampeon.Promedio)
                     cantidadCampeones++;
+                
+            }
 
+            Jugador[] campeones = new Jugador[cantidadCampeones];
             //Aqui visualizamos resultados
             if (cantidadCampeones == 1)
+            {
+                for (int i1 = 0; i1 < arregloJugadores.Length; i1++)
+                {
+                    Jugador unJugador = arregloJugadores[i1];
+                    if (unJugador.Promedio == jugadorCampeon.Promedio)
+                        Add(campeones, arregloJugadores[i1]);
+                }
+               
                 Console.WriteLine($"\n\nEl Campeón del Barrio es {jugadorCampeon.Nombre}\n" +
                 $" que obtuvo promedio de {jugadorCampeon.Promedio.ToString("0.00")} puntos por campaña.");
+            }
+                
             else
             {
                 Console.WriteLine($"\n\nSe presentó empate con un puntaje de {jugadorCampeon.Promedio.ToString("0.00")} entre: ");
 
-                foreach (Jugador unJugador in arregloJugadores)
+                for (int i = 0; i < arregloJugadores.Length; i++)
+                {
+                    Jugador unJugador = arregloJugadores[i];
                     if (unJugador.Promedio == jugadorCampeon.Promedio)
+                    {
+                        
                         Console.WriteLine($"- {unJugador.Nombre} con {unJugador.Campañas} campaña(s) jugadas");
+
+                        Add(campeones, unJugador);
+                    }
+                        
+
+
+                }
+                
+
             }
+
+            
+            return campeones;
+
+           
+        }
+
+        public static void Add(Jugador[] matriz, Jugador j)
+        {
+            for (int i = 0; i < matriz.Length; i++)
+                if (matriz[i] == null) matriz[i] = j; return;
         }
     }
 }
