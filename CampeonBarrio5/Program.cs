@@ -12,7 +12,7 @@ namespace CampeonBarrio5
         {
             Console.WriteLine("*** Campeón del Barrio *** \n\n");
 
-            Console.WriteLine("Se registrarán la cantidad de campañas y puntos totales para 5 jugadores");
+            Console.WriteLine("Me quiero morir");
             Console.WriteLine("El campeón será quien tenga mejor promedio de puntos por campaña");
             Console.WriteLine("Si hay empate con el mejor promedio, se indicará el nombre de los jugadores");
 
